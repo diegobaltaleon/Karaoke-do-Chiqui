@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Diego Balta">
+    <meta name="keywords" content="karaoke, Karaoke, karaokedochiqui">
+    <!-- Favicon -->
+    <link rel="icon" href="logochiqui.png" type="image/png">
+    <!-- CSS y Fuentes -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+CU+Guides&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- AOS Library para animaciones -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <title>Karaoke do Chiqui</title>
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <div class="header-content" data-aos="fade-down">
+            <h1>Karaoke do Chiqui 🎤</h1>
+            <p class="tagline">¡La fiesta más divertida de Pipa!</p>
+        </div>
+    </header>
+
+    <!-- Sección Principal -->
+    <main>
+        <section id="event-details" class="event-card" data-aos="fade-up">
+            <h2>Detalles del Evento</h2>
+            <div class="event-info">
+                <div class="info-item">
+                    <i class="bi bi-calendar-event"></i>
+                    <p><strong>Cuándo:</strong> Miercoles y domingos a las 21:30</p>
+                </div>
+                <div class="info-item">
+                    <i class="bi bi-geo-alt"></i>
+                    <p><strong>Dónde:</strong> Dudo Bar</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premios -->
+        <section id="premios" class="event-card" data-aos="fade-up">
+            <h2>¡Premios increíbles! 🏆</h2>
+            <div class="premios-container">
+                <div class="premio-item">
+                    <div class="premio-icon">🥇</div>
+                    <div class="premio-info">
+                        <h3>1º Premio</h3>
+                        <p>Pizza casera de @dudobar</p>
+                    </div>
+                </div>
+                <div class="premio-item">
+                    <div class="premio-icon">🥈</div>
+                    <div class="premio-info">
+                        <h3>2º Premio</h3>
+                        <p>Café con leche + 2 medialunas (Gula Café)</p>
+                    </div>
+                </div>
+                <div class="premio-item">
+                    <div class="premio-icon">🥉</div>
+                    <div class="premio-info">
+                        <h3>3º Premio</h3>
+                        <p>Kit especial de Aloha Tabaquería</p>
+                    </div>
+                </div>
+                <div class="premio-item">
+                    <div class="premio-icon">🎁</div>
+                    <div class="premio-info">
+                        <h3>4º Premio</h3>
+                        <p>Crepe de La Tentación</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Botón de participación -->
+        <section id="cta" data-aos="zoom-in">
+            <button id="contact-btn">
+                <i class="bi bi-music-note-beamed"></i>
+                ¡Quiero participar!
+            </button>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="logo-section">
+                <img src="/logochiqui.png" alt="logo Karaoke" class="footer-logo">
+            </div>
+            <div class="social-section">
+                <p>Seguinos en:</p>
+                <div class="iconos-redes-sociales">
+                    <a href="https://www.instagram.com/karaokedochiqui?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="mailto:diegobaltaleon@hotmail.com" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-envelope"></i>
+                    </a>
+                    <a id="contacto" href="https://wa.me/message/IMVAQ37SAOWDC1" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p class="barberia-footer">Karaoke do Chiqui (2025) &#169;</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Inicializar AOS
+        AOS.init();
+
+        // Manejador del botón de contacto
+        document.getElementById("contact-btn").addEventListener("click", function() {
+            window.location.href = "https://wa.me/message/IMVAQ37SAOWDC1";
+        });
+    </script>
+</body>
+</html>
