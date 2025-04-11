@@ -24,20 +24,40 @@ header {
     position: relative;
     color: white;
     text-align: center;
-    padding: 6em 0;  /* Ajusta el padding según sea necesario */
-    background: url('logochiqui.png') center center / cover no-repeat;
+    padding: 2em 0; /* Reducido el padding */
+    background: url('fotokaraokeChat1.png') center center no-repeat;
+    background-size: contain; /* Cambiado a contain para mostrar la imagen completa */
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     overflow: hidden;
+    min-height: 100vh; /* Ajustado para usar toda la altura de la ventana */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1035; /* Color de fondo para los espacios vacíos */
+}
+
+/* Overlay ajustado */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.5)
+    );
+    pointer-events: none;
 }
 
 .header-content {
     position: relative;
-    z-index: 2; /* Asegura que el contenido esté por encima del fondo */
+    z-index: 2;
     max-width: 800px;
     margin: 0 auto;
-    padding: 0 20px;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejorar la legibilidad */
-    border-radius: 15px; /* Esquinas redondeadas */
+    padding: 2em;
+    border-radius: 15px;
 }
 
 h1 {
@@ -237,7 +257,9 @@ footer {
     }
 
     header {
-        padding: 4em 0;  /* Menos padding en móviles */
+        background-size: contain;
+        min-height: 100vh;
+        padding: 1em 0;
     }
 
     h1 {
@@ -246,5 +268,12 @@ footer {
 
     .tagline {
         font-size: 1.2em;
+    }
+}
+
+@media (min-width: 1920px) {
+    header {
+        background-size: cover; /* Para pantallas muy grandes */
+        min-height: 600px;
     }
 }
