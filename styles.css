@@ -24,40 +24,50 @@ header {
     position: relative;
     color: white;
     text-align: center;
-    padding: 2em 0; /* Reducido el padding */
+    padding: 0;
     background: url('fotokaraokeChat1.png') center center no-repeat;
-    background-size: contain; /* Cambiado a contain para mostrar la imagen completa */
+    background-size: contain;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     overflow: hidden;
-    min-height: 100vh; /* Ajustado para usar toda la altura de la ventana */
+    min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
-    background-color: #1a1035; /* Color de fondo para los espacios vacíos */
+    background-color: #1a1035;
+    animation: discoBg 8s infinite;
 }
 
-/* Overlay ajustado */
-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.3),
-        rgba(0, 0, 0, 0.5)
-    );
-    pointer-events: none;
+/* Efecto disco/fiesta para el fondo */
+@keyframes discoBg {
+    0% {
+        background-color: #1a1035;
+        filter: hue-rotate(0deg) brightness(1);
+    }
+    25% {
+        background-color: #2d1259;
+        filter: hue-rotate(45deg) brightness(1.1);
+    }
+    50% {
+        background-color: #1a1035;
+        filter: hue-rotate(90deg) brightness(1);
+    }
+    75% {
+        background-color: #2d1259;
+        filter: hue-rotate(45deg) brightness(1.1);
+    }
+    100% {
+        background-color: #1a1035;
+        filter: hue-rotate(0deg) brightness(1);
+    }
 }
 
 .header-content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 2em;
-    border-radius: 15px;
 }
 
 h1 {
@@ -76,11 +86,79 @@ h1 {
 }
 
 .tagline {
-    font-size: 1.6em;
+    font-size: 1.5em;
     font-weight: bold;
     color: #fff;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    margin-top: 0.5em;
+    text-shadow: 
+        2px 2px 4px rgba(0,0,0,0.5),
+        0 0 20px rgba(255,255,255,0.3),
+        0 0 40px rgba(255,51,102,0.3),
+        0 0 60px rgba(0,255,204,0.3);
+    animation: neonPulse 2s ease-in-out infinite;
+    padding: 12px 20px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+/* Efecto de neón pulsante */
+@keyframes neonPulse {
+    0% {
+        text-shadow: 
+            2px 2px 4px rgba(0,0,0,0.5),
+            0 0 20px rgba(255,255,255,0.3),
+            0 0 40px rgba(255,51,102,0.3),
+            0 0 60px rgba(0,255,204,0.3);
+    }
+    50% {
+        text-shadow: 
+            2px 2px 4px rgba(0,0,0,0.5),
+            0 0 30px rgba(255,255,255,0.5),
+            0 0 60px rgba(255,51,102,0.5),
+            0 0 80px rgba(0,255,204,0.5);
+    }
+    100% {
+        text-shadow: 
+            2px 2px 4px rgba(0,0,0,0.5),
+            0 0 20px rgba(255,255,255,0.3),
+            0 0 40px rgba(255,51,102,0.3),
+            0 0 60px rgba(0,255,204,0.3);
+    }
+}
+
+/* Overlay con efecto de brillos */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(255,51,102,0.2) 0%, transparent 25%),
+        radial-gradient(circle at 80% 80%, rgba(0,255,204,0.2) 0%, transparent 25%);
+    animation: discoLights 8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes discoLights {
+    0% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
 }
 
 /* Main Content Styles */
@@ -268,6 +346,9 @@ footer {
 
     .tagline {
         font-size: 1.2em;
+        bottom: 15px;
+        width: 90%;
+        white-space: normal;
     }
 }
 
